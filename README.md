@@ -132,8 +132,11 @@
   
 >**6. Протестировать заново**
 
+выполняю: ``sudo -u postgres pgbench -c8 -P 6 -T 60 -U postgres postgres``
 
- <br/> 
+  ![image](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/75d03063-a4ea-4709-b9ad-1ab77d5126cc)
+
+<br/> 
 
 >**7. Что изменилось и почему?**
 
