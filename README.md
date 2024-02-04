@@ -44,7 +44,9 @@
 
 >**4. Запустить pgbench -c8 -P 6 -T 60 -U postgres postgres**
 
+выполняю: ``sudo -u postgres pgbench -c8 -P 6 -T 60 -U postgres postgres``
 
+  ![4_1](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/0e8c2707-f39f-4a4d-be50-0b9845c94bf8)
 
   <br/>
 
