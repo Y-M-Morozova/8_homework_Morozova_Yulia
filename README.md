@@ -74,7 +74,7 @@
 сейчас они по умолчанию:  
   ![5_1](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/a78cbf99-1057-447d-97c3-da2b8400bdda)
 
-  выставляю их согласно заданию скриптом:
+выставляю их (согласно заданию) скриптом:
 
   ```sql
     ALTER SYSTEM SET
@@ -105,6 +105,28 @@
 
   ![5_2](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/5e26386e-585b-4e99-aa5b-5e0c95778cbf)
 
+Так как среди измененных есть параметры, требующие рестарта, то сначала выполняю команду: 
+<br> ``sudo -u postgres pg_ctlcluster 15 main restart``, потом захожу в postgres и проверяю параметры скриптом:
+
+```sql
+    select name, setting, unit, context from pg_settings where name in(
+      'max_connections',
+      'shared_buffers',
+      'effective_cache_size',
+      'maintenance_work_mem',
+      'checkpoint_completion_target',
+      'wal_buffers',
+      'default_statistics_target',
+      'random_page_cost',
+      'effective_io_concurrency',
+      'work_mem',
+      'min_wal_size',
+      'max_wal_size');
+```
+
+и все ок:
+
+![5_4](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/0a4e866a-df0d-4751-87aa-8780dfe42ed0)
 
 <br/>
   
