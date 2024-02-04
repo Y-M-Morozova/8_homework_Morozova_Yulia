@@ -26,6 +26,12 @@
 
 >**2. Установить на него PostgreSQL 15 с дефолтными настройками**
 
+Подключаюсь к этой ВМ в ЯО по ``ssh`` с помощью putty(ключи public , private генерирую с помощью puttygen) и устанавливаю Postgres 15й версии с настройками по умолчанию командами и далее проверяю:
+
+``sudo apt update && sudo apt upgrade -y -q && sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list' && wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - && sudo apt-get update && sudo apt -y install postgresql-15``
+
+  ![2_2](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/eb835560-0e8b-49ae-9237-e9b4a8263c54)
+
 <br/>
 
 >**3. Создать БД для тестов: выполнить pgbench -i postgres**
