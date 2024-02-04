@@ -53,6 +53,57 @@
 >**5. Применить параметры настройки PostgreSQL из прикрепленного к материалам занятия файла**
 
 
+Сначала смотрю текущие значения параметров, какие буду менять далее, смотрю запросом:
+
+```sql
+    select name, setting, context from pg_settings where name in(
+      'max_connections',
+      'shared_buffers',
+      'effective_cache_size',
+      'maintenance_work_mem',
+      'checkpoint_completion_target',
+      'wal_buffers',
+      'default_statistics_target',
+      'random_page_cost',
+      'effective_io_concurrency',
+      'work_mem',
+      'min_wal_size',
+      'max_wal_size');
+```
+
+сейчас они по умолчанию:  
+  ![5_1](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/a78cbf99-1057-447d-97c3-da2b8400bdda)
+
+  выставляю их согласно заданию скриптом:
+
+  ```sql
+    ALTER SYSTEM SET
+    max_connections='40';
+    ALTER SYSTEM SET
+    shared_buffers='1GB';
+    ALTER SYSTEM SET
+    effective_cache_size='3GB';
+    ALTER SYSTEM SET
+    maintenance_work_mem='512MB';
+    ALTER SYSTEM SET
+    checkpoint_completion_target='0.9';
+    ALTER SYSTEM SET
+    wal_buffers='16MB';
+    ALTER SYSTEM SET
+    default_statistics_target='500';
+    ALTER SYSTEM SET
+    random_page_cost='4';
+    ALTER SYSTEM SET
+    effective_io_concurrency='2';
+    ALTER SYSTEM SET
+    work_mem='6553kB';
+    ALTER SYSTEM SET
+    min_wal_size='4GB';
+    ALTER SYSTEM SET
+    max_wal_size='16GB';
+  ```
+
+  ![5_2](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/5e26386e-585b-4e99-aa5b-5e0c95778cbf)
 
 
 <br/>
