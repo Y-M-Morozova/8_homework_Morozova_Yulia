@@ -36,6 +36,9 @@
 
 >**3. Создать БД для тестов: выполнить pgbench -i postgres**
 
+выполняю: ``sudo -u postgres pgbench -i postgres``
+
+  ![3_1](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/afa29395-577d-4171-9087-6ea90a068b2e)
 
   <br/>
 
