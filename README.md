@@ -149,6 +149,12 @@
 
 >**8. Создать таблицу с текстовым полем и заполнить случайными или сгенерированными данным в размере 1млн строк**
 
+выыполняю командой:
+```sql
+  CREATE TABLE test_autovacuum(txt_data text);
+```
+
+  ![8_1](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/5e2a9a31-6a21-4dcc-a773-ca782d504df4)
 
 <br/>
 
