@@ -149,12 +149,13 @@
 
 >**8. Создать таблицу с текстовым полем и заполнить случайными или сгенерированными данным в размере 1млн строк**
 
-выполняю командой:
+выполняю скриптом:
 ```sql
   CREATE TABLE test_autovacuum(txt_data text);
+  INSERT INTO test_autovacuum(txt_data) SELECT substr(md5(random()::text), 0, 10) FROM generate_series(1,1000000);
 ```
 
-  ![8_1](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/5e2a9a31-6a21-4dcc-a773-ca782d504df4)
+  ![8_12](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/bb09d985-a57c-4674-a619-8de299c0fd97)
 
 <br/>
 
@@ -165,7 +166,7 @@
   select pg_size_pretty(pg_total_relation_size('test_autovacuum'));
 ```
 
-  ![9_1](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/7581b514-c3b8-4abb-8947-0d90f5b5ba6b)
+  ![9_12](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/e02b30f0-c7a4-4849-a5a0-db4ff8da4346)
 
 <br/>
 
