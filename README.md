@@ -149,7 +149,7 @@
 
 >**8. Создать таблицу с текстовым полем и заполнить случайными или сгенерированными данным в размере 1млн строк**
 
-выыполняю командой:
+выполняю командой:
 ```sql
   CREATE TABLE test_autovacuum(txt_data text);
 ```
@@ -160,6 +160,12 @@
 
 >**9. Посмотреть размер файла с таблицей**
 
+выполняю командой:
+```sql
+  select pg_size_pretty(pg_total_relation_size('test_autovacuum'));
+```
+
+  ![9_1](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/7581b514-c3b8-4abb-8947-0d90f5b5ba6b)
 
 <br/>
 
