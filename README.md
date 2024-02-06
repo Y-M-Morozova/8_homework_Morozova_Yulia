@@ -192,6 +192,13 @@
 
 >**11. Посмотреть количество мертвых строчек в таблице и когда последний раз приходил автовакуум**
 
+Смотрю количество мертвы строк в таблице и время последнего автовакуума командой:
+
+```sql
+  SELECT relname, n_live_tup, n_dead_tup, trunc(100*n_dead_tup/(n_live_tup+1))::float "ratio%", last_autovacuum FROM pg_stat_user_tables WHERE relname = 'test_autovacuum';
+```
+
+  ![10_1](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/568f4f29-8e43-45d4-935a-da7c5e89edea)
 
 <br/>
 
