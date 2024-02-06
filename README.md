@@ -258,13 +258,33 @@
 
 >**16. 10 раз обновить все строчки и добавить к каждой строчке любой символ**
 
+снова выполняю:
+
+сначала обновляю 10 раз все строки, для этого запускаю 10 раз команду:
+
+```sql
+  UPDATE test_autovacuum SET txt_data = md5(random()::text);
+```
+  
+ а теперь добавляю к каждой строке любой символ командой:
+
+```sql
+  UPDATE test_autovacuum SET txt_data = txt_data || substr(md5(random()::text), 1, 1);
+```
+
+  ![16_3](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/23ce3619-f818-4cfa-9def-fcb862c9a66b)
 
 
 <br/>
 
 >**17. Посмотреть размер файла с таблицей**
 
+выполняю командой:
+```sql
+  select pg_size_pretty(pg_total_relation_size('test_autovacuum'));
+```
 
+  ![17_1](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/b9da3795-3e4a-4441-a724-ebd7964a73a7)
 
 <br/>
 
@@ -290,49 +310,4 @@
 
 
 
-
-
-
->**20. подсказка в шпаргалке под пунктом 20**
-
-О, да! Кратко и понятно - посмотрела в шпаргалке, да: 
-
-***таблица создана в схеме public а не testnm и прав на public для роли readonly не давали***
-
-<br/> 
-
->**21. а почему так получилось с таблицей (если делали сами и без шпаргалки то может у вас все нормально)**
-
- Потому,  что я осознанно сделала выбор - создавать таблицу в схеме по умолчанию, а это ``public``, не указывала схему  при создании таблицы как ``testnm``
-
-<br/>
-
->**22. вернитесь в базу данных testdb под пользователем postgres**
-
-  ![22_1](https://github.com/Y-M-Morozova/4_homework_Morozova_Yulia/assets/153178571/eb9c029e-75b2-4ccb-b941-eba30ecab63e)
-
-<br/>
-
->**23. удалите таблицу t1**
-
-выполняю командой и потом проверяю:
-
-```sql
-  drop table t1;
-```
-
-  ![23_1](https://github.com/Y-M-Morozova/4_homework_Morozova_Yulia/assets/153178571/e671cb69-10ae-4acd-b389-aad34e8053d6)
-
-<br/>
-
->**24. создайте ее заново но уже с явным указанием имени схемы testnm**
-
-выполняю командой и потом проверяю:
-
-```sql
-  create table testnm.t1 (c1 integer);
-```
-
-  ![24_1](https://github.com/Y-M-Morozova/4_homework_Morozova_Yulia/assets/153178571/d72c0d57-fc0a-4baa-a97b-0e2d0d421b1d)
-
-<br/>
+***
