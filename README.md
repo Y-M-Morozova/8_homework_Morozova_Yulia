@@ -210,19 +210,51 @@
 
 >**13. 5 раз обновить все строчки и добавить к каждой строчке любой символ**
 
+снова выполняю:
+
+сначала обновляю 5 раз все строки, для этого запускаю 5 раз команду:
+
+```sql
+  UPDATE test_autovacuum SET txt_data = md5(random()::text);
+```
+  
+ а теперь добавляю к каждой строке любой символ командой:
+
+```sql
+  UPDATE test_autovacuum SET txt_data = txt_data || substr(md5(random()::text), 1, 1);
+```
+
+  ![13_1](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/f1fec07f-d36d-4bba-ae01-fe8a1e8761f1)
+
+<br/>
+
+и смотрю - в этот раз автовакуум еще не успел отработать и вижу мертвые строки!
+
+  ![13_3](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/b3852925-d556-471f-bb13-170591f955ea)
 
 <br/>
 
 >**14. Посмотреть размер файла с таблицей**
 
+выполняю командой:
+```sql
+  select pg_size_pretty(pg_total_relation_size('test_autovacuum'));
+```
+
+  ![14_1](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/0be00b11-61fc-488e-b9af-49624c89e091)
 
 <br/>
 
 >**15. Отключить Автовакуум на конкретной таблице**
 
+выполняю командой:
+```sql
+  alter table test_autovacuum set (autovacuum_enabled = off);
+```
+
+![15_1](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/6af271fd-8813-4d9f-a25c-7b5b2bd50cca)
 
 <br/>
-
 
 >**16. 10 раз обновить все строчки и добавить к каждой строчке любой символ**
 
