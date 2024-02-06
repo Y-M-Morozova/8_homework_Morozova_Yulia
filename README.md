@@ -180,6 +180,14 @@
   
   ![9_2](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/69ca2d38-e899-43f2-b4e9-091a9834711a)
 
+а теперь добавляю к каждой строке любой символ командой:
+
+```sql
+  UPDATE test_autovacuum SET txt_data = md5(random()::text);
+```
+
+  ![9_3](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/36a38725-6669-4952-855b-dfed2006509f)
+
 <br/>
 
 >**11. Посмотреть количество мертвых строчек в таблице и когда последний раз приходил автовакуум**
