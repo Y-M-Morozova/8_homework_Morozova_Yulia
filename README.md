@@ -172,7 +172,13 @@
 
 >**10. 5 раз обновить все строчки и добавить к каждой строчке любой символ**
 
+сначала обновляю 5 раз все строки, для этого запускаю 5 раз команду:
 
+```sql
+  UPDATE test_autovacuum SET txt_data = md5(random()::text);
+```
+  
+  ![9_2](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/69ca2d38-e899-43f2-b4e9-091a9834711a)
 
 <br/>
 
