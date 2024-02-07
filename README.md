@@ -334,7 +334,6 @@
   $do$;
 ```
 
-
-
+  ![20_1](https://github.com/Y-M-Morozova/8_homework_Morozova_Yulia/assets/153178571/5ef80c2e-7ffe-46d0-9a7a-95dbcbed325c)
 
 ***
